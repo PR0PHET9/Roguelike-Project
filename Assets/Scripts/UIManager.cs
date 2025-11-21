@@ -22,4 +22,11 @@ public class UIManager : MonoBehaviour
       pauseUI.SetActive(true);
     
    }
+   void Update () {
+if (Input.GetKeyDown(KeyCode.Escape))
+{
+   pauseUI.gameObject.SetActive(!pauseUI.gameObject.activeSelf);
+}
+
+   }
 }
