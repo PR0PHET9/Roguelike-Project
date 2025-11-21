@@ -98,7 +98,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 45, y: 110}
+  m_CellSize: {x: 70, y: 70}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -206,11 +206,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9156241047417498525, guid: e724ee697f892094fb97f5f56b7b0c0e, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 3899482394241140397}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e724ee697f892094fb97f5f56b7b0c0e, type: 3}
+--- !u!114 &3899482394241140397 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2915532508916086988, guid: e724ee697f892094fb97f5f56b7b0c0e, type: 3}
+  m_PrefabInstance: {fileID: 2192043338334076513}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &8120637779124261790 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7987695538864156159, guid: e724ee697f892094fb97f5f56b7b0c0e, type: 3}
