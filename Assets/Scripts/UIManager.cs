@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
    }
       public void OnGameExitPress () {
-         Application.Quit();
+      Application.Quit();
     
    }
      public void OnEnterPausePress () {

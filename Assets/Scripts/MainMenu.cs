@@ -5,7 +5,11 @@ public class MainMenu : MonoBehaviour
 {
  public void PlayGame()
  {
-    SceneManager.LoadSceneAsync(1);
+    SceneManager.LoadScene("Test Level 1"); // Loading Test Level 1 atm
  }
 
+public void QuitGame()
+{
+   Application.Quit();
+}
 }
