@@ -1959,7 +1959,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 111812021999253116, guid: 079ea2cf329a56a43867648a9d1c1972, type: 3}
       propertyPath: m_Name
-      value: RangePrefab
+      value: CRangePrefab
       objectReference: {fileID: 0}
     - target: {fileID: 749657834688754054, guid: 079ea2cf329a56a43867648a9d1c1972, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2005,6 +2005,10 @@ PrefabInstance:
       propertyPath: owner
       value: 
       objectReference: {fileID: 3273818669397062814}
+    - target: {fileID: 4841631514556658169, guid: 079ea2cf329a56a43867648a9d1c1972, type: 3}
+      propertyPath: magicAttack
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2719,7 +2723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5787450108565201679, guid: a4cdb87cf0cb061428310e35a5242bfc, type: 3}
       propertyPath: m_Name
-      value: MeleePrefab
+      value: CMeleePrefab
       objectReference: {fileID: 0}
     - target: {fileID: 7336645261938586384, guid: a4cdb87cf0cb061428310e35a5242bfc, type: 3}
       propertyPath: owner
@@ -2827,12 +2831,12 @@ GameObject:
   - component: {fileID: 962281385}
   - component: {fileID: 962281384}
   m_Layer: 5
-  m_Name: BattleText
+  m_Name: BattleMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &962281383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4662,7 +4666,7 @@ GameObject:
   - component: {fileID: 1625908424}
   - component: {fileID: 1625908423}
   m_Layer: 5
-  m_Name: HeroMagicFill
+  m_Name: MagicFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5643,6 +5647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4ac5c371f32d74b9fe4211d77924eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  battleText: {fileID: 0}
 --- !u!4 &1922152239
 Transform:
   m_ObjectHideFlags: 0
@@ -7250,6 +7255,7 @@ GameObject:
   - component: {fileID: 1357815745819891151}
   - component: {fileID: 1937056404837411873}
   - component: {fileID: 1191546247082870174}
+  - component: {fileID: 6921355541171182301}
   - component: {fileID: 6921355541171182300}
   - component: {fileID: 6921355541171182299}
   m_Layer: 0
@@ -7526,11 +7532,26 @@ MonoBehaviour:
   melee: 20
   magicRange: 10
   defense: 7
-  speed: 15
+  speed: 5
   experience: 0
   startHealth: 0
   startMagic: 0
   nextActTurn: 0
+--- !u!114 &6921355541171182301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3273818670745046982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3146ffb3eea254eba2f1529ae8fec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  playerRb: {fileID: 1191546247082870174}
+  speed: 10
+  input: 0
 --- !u!4 &6921355541947526610
 Transform:
   m_ObjectHideFlags: 0
@@ -7617,7 +7638,7 @@ MonoBehaviour:
   health: 100
   magic: 50
   melee: 25
-  magicRange: 25
+  magicRange: 20
   defense: 4
   speed: 5
   experience: 0
@@ -7713,8 +7734,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 801037644}
   - {fileID: 1922152239}
+  - {fileID: 801037644}
   - {fileID: 1242033389}
   - {fileID: 841009235}
   - {fileID: 2032879173}

@@ -1,49 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FighterAbility : MonoBehaviour
 {
-private GameObject enemy;
-private GameObject hero;
+    private GameObject hero;
+    private GameObject enemy;
 
+    [SerializeField]
+    private GameObject meleePrefab;
 
-[SerializeField]
-private GameObject meleePrefab;
+    [SerializeField]
+    private GameObject rangePrefab;
 
-[SerializeField]
-private GameObject rangePrefab;
+    [SerializeField]
+    private Sprite faceIcon;
 
-[SerializeField]
-private Sprite faceIcon;
-
-private GameObject currentAttack;
-
-
-void Awake()
-{
-
-    hero = GameObject.FindGameObjectWithTag("Hero");
-    enemy = GameObject.FindGameObjectWithTag("Enemy");
-}
-
-public void SelectAttack(string btn)
-{
+    private GameObject currentAttack;
     
-    GameObject victim = tag == "Hero" ? enemy : hero;
+    void Awake()
     {
-        victim = enemy;
+        hero = GameObject.FindGameObjectWithTag("Hero");
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
-    
-    if (btn.CompareTo("melee") == 0)
+    public void SelectAttack(string btn)
     {
-        meleePrefab.GetComponent<AttackScript>().Attack(victim);
-    } 
-    else if (btn.CompareTo("range") == 0)
-    {
-        rangePrefab.GetComponent<AttackScript>().Attack(victim);
-    } else  
-    { 
-    Debug.Log("Run");
+        GameObject victim = hero;
+        if (tag == "Hero")
+        {
+            victim = enemy;
+        }
+        if (btn.CompareTo("melee") == 0)
+        {
+            meleePrefab.GetComponent<AttackScript>().Attack(victim);
+
+        } else if (btn.CompareTo("range") == 0)
+        {
+            rangePrefab.GetComponent<AttackScript>().Attack(victim);
+        } else
+        {
+            Debug.Log("Run");
+        }
     }
-}
 }

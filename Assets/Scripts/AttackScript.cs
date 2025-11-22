@@ -1,3 +1,5 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackScript : MonoBehaviour
@@ -41,30 +43,34 @@ public void Attack(GameObject victim)
     attackerStats = owner.GetComponent<FighterStats>();
     targetStats = victim.GetComponent<FighterStats>();
   
-    if(attackerStats.magic >= magicCost); //Checks mana cost of spell even if zero
+    if(attackerStats.magic >= magicCost) //Checks mana cost of spell even if zero
     {
         float multiplier = Random.Range(minAttackMultiplier, maxAttackMultiplier);
-        if(magicCost > 0)
+     
 
-        {
-        attackerStats.updateMagicFill(magicCost);
-        }
         damage = multiplier * attackerStats.melee; //Magic costs
         if (magicAttack)
         {
             damage = multiplier * attackerStats.magicRange;
-            attackerStats.magic = attackerStats.magic - magicCost;
+
+            attackerStats.magic = attackerStats.magic - magicCost; //
 
         }
         float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
-        damage =Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
+        damage = Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
 
         //Future Animation script (remove this line later)
         //owner.GetComponent<Animator>().Play(animationName); 
         targetStats.ReceiveDamage(damage); //Target takes damage
         attackerStats.updateMagicFill(magicCost);
+         } else
+        {
+            Invoke("SkipTurnContinueGame", 2);
+        }
     }
 
-}
-
+    void SkipTurnContinueGame()
+    {
+        GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();
+    }
 }

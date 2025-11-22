@@ -42,6 +42,8 @@ public class FighterStats : MonoBehaviour, IComparable
  private float xNewHealthScale;
  private float xNewMagicScale;
 
+ private GameObject GameControllerObj;
+
   void Awake()
  {
     healthTransform = healthFill.GetComponent<RectTransform>();
@@ -53,6 +55,7 @@ public class FighterStats : MonoBehaviour, IComparable
     startHealth = health;
     startMagic = magic;
 
+ GameControllerObj = GameObject.Find("GameControllerObject");
 }
 
     public void ReceiveDamage(float damage)
@@ -73,11 +76,16 @@ public class FighterStats : MonoBehaviour, IComparable
         healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
 
     }
+     if(damage > 0)
+        {
+            GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+            GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
+        }
     Invoke("ContinueGame", 2);
     }
     public void updateMagicFill(float cost) //Updating mana costs
     {
-        if(cost < 1)
+        if(cost < 0)
         {
         magic = magic - cost;
         xNewMagicScale = magicScale.x * (magic / startMagic);
