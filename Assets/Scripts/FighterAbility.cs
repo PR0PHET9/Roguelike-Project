@@ -17,21 +17,30 @@ private GameObject rangePrefab;
 private Sprite faceIcon;
 
 private GameObject currentAttack;
-private GameObject meleeAttack;
-private GameObject rangeAttack;
+
+
+void Awake()
+{
+
+    hero = GameObject.FindGameObjectWithTag("Hero");
+    enemy = GameObject.FindGameObjectWithTag("Enemy");
+}
 
 public void SelectAttack(string btn)
 {
     
     GameObject victim = tag == "Hero" ? enemy : hero;
+    {
+        victim = enemy;
+    }
     
     if (btn.CompareTo("melee") == 0)
     {
-    Debug.Log("Melee Attack");
+        meleePrefab.GetComponent<AttackScript>().Attack(victim);
     } 
     else if (btn.CompareTo("range") == 0)
     {
-    Debug.Log("Range Attack");
+        rangePrefab.GetComponent<AttackScript>().Attack(victim);
     } else  
     { 
     Debug.Log("Run");
