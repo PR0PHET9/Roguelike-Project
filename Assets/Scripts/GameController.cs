@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms;
 
 public class GameController : MonoBehaviour
 {
-    private List<FighterStats> fighterStats;
+   /* private List<FighterStats> fighterStats;
 
     private GameObject battleMenu;
 
@@ -61,4 +61,5 @@ public class GameController : MonoBehaviour
             NextTurn();
         }
     }
+    */
 }

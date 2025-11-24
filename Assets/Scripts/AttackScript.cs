@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackScript : MonoBehaviour
 {
-
+/*
 public GameObject owner;
 
 //Future Animation Scripts/Classing
@@ -73,4 +73,5 @@ public void Attack(GameObject victim)
     {
         GameObject.Find("GameControllerObject").GetComponent<GameController>().NextTurn();
     }
+    */
 }

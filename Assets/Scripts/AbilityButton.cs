@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class AbilityButton : MonoBehaviour
 {
+    /*
 [SerializeField]
 private bool physical;
 
@@ -28,4 +29,5 @@ else
 hero.GetComponent<FighterAbility>().SelectAttack("run");
 }
 }
+*/
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FighterAbility : MonoBehaviour
 {
+    /*
     private GameObject hero;
     private GameObject enemy;
 
@@ -43,4 +44,5 @@ public class FighterAbility : MonoBehaviour
             Debug.Log("Run");
         }
     }
+    */
 }

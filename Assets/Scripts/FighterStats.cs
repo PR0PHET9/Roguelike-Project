@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-
-
+/*
 public class FighterStats : MonoBehaviour, IComparable
 {
- //[SerializeField]
-    //private Animator animator;
+    
+ [SerializeField]
+private Animator animator;
  [SerializeField]
     private GameObject healthFill;
  [SerializeField]
@@ -112,4 +112,6 @@ public class FighterStats : MonoBehaviour, IComparable
         int nex = nextActTurn.CompareTo(((FighterStats)otherStats).nextActTurn);
         return nex;
     }
+    
 }
+*/
